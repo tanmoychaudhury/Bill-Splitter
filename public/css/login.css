@@ -1,0 +1,358 @@
+/* .appBlockHeader{
+	background-color: #ffffff;
+    border: 1px solid #4dbd74;
+    
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    
+    
+} */
+.logincontent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #EEEDED;
+}
+
+.logindetailslayout{
+	width: 300px;
+    height: 450px;
+	background-color: white;
+	
+	position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+	margin:auto;
+	
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+}
+
+.img-logo {
+    display: inline-block;
+    max-width: 45%;
+    max-height: 60px;
+    height: auto;
+    margin: auto auto;
+}
+.loginbtn{
+	position:absolute;
+    bottom: 10px;
+    left: 40%;
+	max-width: 30%;
+	max-height: 10%;
+}
+.appLoginMutedTextDiv{
+	margin-bottom: 1rem;
+	box-sizing: inherit;
+	text-align: center;
+	font-weight: bolder;
+}
+.flex-center {
+  height: 100%;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+body {
+  min-height: 100vh;
+  background-color: #e7edee;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  }
+  body .app {
+    min-height: 100vh; }
+  body .app-container {
+    padding: 0px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    padding-left: 180px; }
+    body .app-container .content-heading {
+      margin-bottom: 30px; }
+      body .app-container .content-heading .title {
+        font-size: 1.75em;
+        font-weight: 200; }
+    body .app-container > div:first-child, body .app-container > ui-view > div:first-child, body .app-container > ui-view > ui-view > div:first-child, body .app-container > ui-view > ui-view > ui-view > div:first-child {
+      margin-top: 30px; }
+    body .app-container > div.row, body .app-container > ui-view > div.row, body .app-container > ui-view > ui-view > div.row, body .app-container > ui-view > ui-view > ui-view > div.row {
+      padding-left: 30px;
+      padding-right: 30px; }
+      body .app-container > div.row > [class*="col-"], body .app-container > ui-view > div.row > [class*="col-"], body .app-container > ui-view > ui-view > div.row > [class*="col-"], body .app-container > ui-view > ui-view > ui-view > div.row > [class*="col-"] {
+        margin-bottom: 30px; }
+    body .app-container .app-heading {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      padding-left: 30px;
+      padding-right: 30px; }
+      body .app-container .app-heading .profile-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 30px; }
+      body .app-container .app-heading .app-title {
+        -ms-flex: 1;
+            flex: 1; }
+        body .app-container .app-heading .app-title .title {
+          font-size: 2em;
+          font-weight: 200; }
+          body .app-container .app-heading .app-title .title .highlight {
+            color: #29c75f; }
+        body .app-container .app-heading .app-title .description {
+          margin-top: 5px;
+          color: #8d9293; }
+    body .app-container.app-login {
+      min-height: 100vh !important; }
+      body .app-container.app-login > div:first-child, body .app-container.app-login > ui-view > div:first-child, body .app-container.app-login > ui-view > ui-view > div:first-child, body .app-container.app-login > ui-view > ui-view > ui-view > div:first-child {
+        margin-top: 0;
+        min-height: 100vh !important; }
+    body .app-container.app-full {
+      height: 100vh !important;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -ms-flex-align: start;
+          align-items: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+      body .app-container.app-full > ui-view {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -ms-flex-align: start;
+            align-items: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+        padding: 0 30px;
+        margin-bottom: 30px;
+        -ms-flex: 1;
+            flex: 1; }
+      body .app-container.app-full > div:first-child, body .app-container.app-full > ui-view > div:first-child, body .app-container.app-full > ui-view > ui-view > div:first-child, body .app-container.app-full > ui-view > ui-view > ui-view > div:first-child {
+        margin-top: 0; }
+      body .app-container.app-full > * {
+        width: 100%; }
+.app-login {
+  background:  #f2f3f4 ;
+  padding: 0 !important; }
+  .app-login .app-body {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex; }
+    .app-login .app-body .app-block {
+      transition: all 0.2s ease;
+      background-color: #FFF;
+      border-radius: 2px;
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+      .app-login .app-body .app-block .app-right-section {
+        background-color: #18aa4a;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        height: 100%;
+        position: relative;
+        padding: 4rem 6rem; }
+        .app-login .app-body .app-block .app-right-section .app-brand {
+          font-size: 1.5em;
+          font-weight: 200;
+          color: #FFF;
+          padding-bottom: 4rem;
+          margin-bottom: 4rem;
+          border-bottom: 1px solid rgba(15, 121, 51, 0.25); }
+          .app-login .app-body .app-block .app-right-section .app-brand .highlight {
+            color: #18aa4a;
+            background-color: white;
+            border-radius: 2px;
+            padding: 2px 8px;
+            font-weight: 200; }
+        .app-login .app-body .app-block .app-right-section .app-info ul.list {
+          list-style: none;
+          padding: 0;
+          margin: 0; }
+          .app-login .app-body .app-block .app-right-section .app-info ul.list li {
+            margin-bottom: 2rem;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: row;
+                flex-direction: row;
+            -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+            -ms-flex-align: center;
+                align-items: center;
+            -ms-flex-pack: start;
+                justify-content: flex-start; }
+            .app-login .app-body .app-block .app-right-section .app-info ul.list li .icon {
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+              -ms-flex-wrap: nowrap;
+                  flex-wrap: nowrap;
+              -ms-flex-align: center;
+                  align-items: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+              display: block;
+              margin: 0 auto;
+              background-color: #FFF;
+              color: #18aa4a;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              transition: all 0.2s ease; }
+              .app-login .app-body .app-block .app-right-section .app-info ul.list li .icon i.fa, .app-login .app-body .app-block .app-right-section .app-info ul.list li .icon i.ion {
+                width: 100%;
+                height: 100%;
+                font-size: 2em;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+                -ms-flex-wrap: nowrap;
+                    flex-wrap: nowrap;
+                -ms-flex-align: center;
+                    align-items: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+                transition: all 0.2s ease; }
+            .app-login .app-body .app-block .app-right-section .app-info ul.list li .title {
+              -ms-flex: 1;
+                  flex: 1;
+              font-weight: 300;
+              padding: 0 1rem;
+              font-size: 0.9em;
+              color: #FFF; }
+      .app-login .app-body .app-block .app-form {
+        padding: 0rem; 
+        position: relative;
+        -ms-flex: 1;
+            flex: 1; }
+        .app-login .app-body .app-block .app-form .form-headerbar{
+    	    height: 60px;
+    		width: 460px;
+    		background-color: white;}
+        .app-login .app-body .app-block .app-form .form-header {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-direction: row;
+              flex-direction: row;
+          -ms-flex-wrap: nowrap;
+              flex-wrap: nowrap;
+          -ms-flex-align: center;
+              align-items: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+          font-size: 2em;
+          font-weight: 200;
+          text-align: center;
+          color: #444;
+          margin-bottom: 1rem; }
+          .app-login .app-body .app-block .app-form .form-header .highlight {
+            font-weight: 400;
+            color: #29c75f;
+            margin-right: 2px; }
+        .app-login .app-body .app-block .app-form .form-suggestion {
+          margin-bottom: 15px; }
+        .app-login .app-body .app-block .app-form form {
+          min-width: 280px; }
+          .app-login .app-body .app-block .app-form form .btn-submit {
+            width: 100%; }
+        .app-login .app-body .app-block .app-form .form-line {
+          width: 100%;
+          /* position: relative; */
+          text-align: center;
+          font-size: 0.9em;
+          z-index: 2;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          color: #8d9293; }
+          .app-login .app-body .app-block .app-form .form-line .title {
+            background-color: #FFF;
+            position: relative;
+            z-index: 2;
+            width: 50px;
+            margin: 0 auto; }
+          .app-login .app-body .app-block .app-form .form-line:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: 1;
+            border-bottom: 1px solid #dfe6e8; }
+        .app-login .app-body .app-block .app-form .form-footer {
+          text-align: center; }
+          .app-login .app-body .app-block .app-form .form-footer .btn {
+            margin: 0 auto; }
+  .app-login.__loading .app-block {
+    filter: url("/assets/images/blur.svg#blur");
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    transform: scale(0.8); }
+  .app-login.__loading .loader-container {
+    color: #FFF;
+    font-size: 2em;
+    font-weight: 200; }
+    .app-login.__loading .loader-container .sk-folding-cube .sk-cube:before {
+      background-color: #FFF; }
+  .app-login.__loading:after {
+    background-color: rgba(41, 199, 95, 0.75); }
+    
+input ::-webkit-input-placeholder {
+  line-height: normal; }
+
+.input-group {
+  border: 1px solid #c8d1d3;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  width: 100%; }
+  .input-group .input-group-addon {
+    font-size: 1em;
+    width: auto;
+    border: 0;
+    /* background-color: transparent; */
+    width: 40px;
+    text-align: center; }
+  .input-group input.form-control, .input-group textarea.form-control {
+    border: 0; }
+  .input-group .input-group-addon + .form-control {
+    border-left: 1px solid #dfe6e8; }    

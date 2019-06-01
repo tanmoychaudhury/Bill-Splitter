@@ -1,0 +1,76 @@
+<div class="container" style="">
+	<div class="card">
+		<div class="card-block" style="background-color: antiquewhite;">
+		<ng-form name="addrecord" novalidate>
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="form-group">
+						<label>Bill Payer:</label>
+						<select type="text" class="form-control" ng-options="bp.name for bp in billpayer | orderBy: 'name'" ng-model="bill_update_payer" ng-required="true">
+							<option value="">--Select Bill Payer--</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label>Date of Payment:</label>
+						<div class="input-group" moment-picker="bill_update_date" format="YYYY-MM-DD" start-view="day">
+							<span class="input-group-addon">
+						        <i class="glyphicon glyphicon-calendar"></i>
+						    </span>
+						    <input class="form-control" placeholder="Select same date as before" ng-model="bill_update_date" ng-model-options="{ updateOn: 'blur' }">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Paid Amount:</label>
+						<input type="number" class="form-control" placeholder="Enter same paid amount as before" ng-model="bill_update_amount" ng-required="true">
+					</div>
+					
+					<div class="col-xs-1"></div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Arindam:</label>
+							<input type="number" class="form-control" ng-model="arindam_update1001" ng-init="arindam_update1001=0" ng-required="true">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Bipra:</label>
+							<input type="number" class="form-control" ng-model="anupam_update1005" ng-init="anupam_update1005=0" ng-required="true">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Saurav:</label>
+							<input type="number" class="form-control" ng-model="subhasis_update1002" ng-init="subhasis_update1002=0" ng-required="true">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Sayan:</label>
+							<input type="number" class="form-control" ng-model="debu_update1004" ng-init="debu_update1004=0" ng-required="true">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Tanmoy:</label>
+							<input type="number" class="form-control" ng-model="tanmoy_update1003" ng-init="tanmoy_update1003=0" ng-required="true">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Description:</label>
+						<textarea class="form-control" placeholder="Enter same bill description as before" ng-model="bill_update_desc" rows="10" ng-required="true"></textarea>
+					</div>				
+				</div>
+				<div class="row">
+			    	<div class="col-xs-4 col-xs-offset-3">
+			        	<button type="submit" class="btn btn-success" ng-disabled="addrecord.$invalid" ng-click="recordUpdateSubmit()">Submit</button>
+			        	<button type="button" class="btn btn-danger" ng-click="recordUpdateReset()">Reset</button>
+			        </div>
+			    </div>
+			</div>
+		</ng-form>
+		</div>
+	</div>
+</div>

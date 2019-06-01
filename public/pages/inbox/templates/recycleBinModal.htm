@@ -1,0 +1,92 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 40px;">
+        <div>
+            <span class="regHeader">Recycle Bin</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-block" style="font-size: large; font-weight: bold; color: #fff; background-color: #24b755;">
+                <div class="col-md-2">Sort By:</div>
+                <div class="col-md-3" style="cursor: pointer;">
+                    <a ng-click="sort('PAYER')">
+                        <span class="fa fa-sort-alpha-asc" aria-hidden="true" ng-show="!reverseSort"></span>
+                        <span class="fa fa-sort-alpha-desc" aria-hidden="true" ng-show="reverseSort"></span>&nbsp;
+                        Payer
+                        <span class="fa fa-sort-desc" aria-hidden="true" ng-show="!reverseSort"></span>
+                        <span class="fa fa-sort-asc" aria-hidden="true" ng-show="reverseSort"></span>
+                    </a>
+                </div>
+                <div class="col-md-3" style="cursor: pointer;">
+                    <a ng-click="sort('BILLDATE')">
+                        <span class="fa fa-calendar" aria-hidden="true" ng-show="!reverseSort"></span>
+                        <span class="fa fa-calendar" aria-hidden="true" ng-show="reverseSort"></span>&nbsp;
+                        Date
+                        <span class="fa fa-sort-desc" aria-hidden="true" ng-show="!reverseSort"></span>
+                        <span class="fa fa-sort-asc" aria-hidden="true" ng-show="reverseSort"></span>
+                    </a>
+                </div>
+                <div class="col-md-4" style="color: black;">
+                    <span class="search-icon"><img src="images/Search icon.png" class="small-img" ></span>
+                    <input type="text" ng-model="search" class="form-control" placeholder="Search..." style="color: black; padding-left: 32px;">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block" ng-if="dataLength === 0">
+				<div class="red" style="text-align: center;">No bill deleted yet</div>
+            </div>
+            <div class="card-block" ng-if="dataLength > 0">
+				<div class="table-responsive">
+					<table class="table table-hover table-outline m-b-0 hidden-sm-down">
+						<thead class="thead-default" style="font-size: large; font-weight: bold;">
+							<tr>
+								<th class="text-center">Payer</th>
+								<th class="text-center">Date</th>
+								<th class="text-center">Paid</th>
+								<th class="text-center">Arindam</th>
+								<th class="text-center">Anupam</th>
+								<th class="text-center">Subhasis</th>
+								<th class="text-center">Debu</th>
+								<th class="text-center">Tanmoy</th>
+								<th class="text-center">Surajit</th>
+								<th>Description</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody  class="black">
+							<tr dir-paginate="data in delBills | orderBy:sortKey:reverseSort | filter:search | itemsPerPage:5" ng-class="{'modified':data.MODIFIED_DATE !== null}">
+								<!-- show-->
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">{{data.PAYER}}</td>
+								<td ng-hide="edited === $index" class="text-center">
+									<span class="label label-primary primary" style="font-size: inherit;">{{data.BILLDATE | date : "dd-MMM-yy"}}</span>
+								</td>
+								<td class="text-center" ng-class="black">₹ {{data.AMOUNT}}</td>
+								<td class="text-center" ng-class="black">₹ {{data.ARINDAM}}</td>
+								<td class="text-center" ng-class="black">₹ {{data.ANUPAM}}</td>
+								<td class="text-center" ng-class="black">₹ {{data.SUBHASIS}}</td>
+								<td class="text-center" ng-class="black">₹ {{data.DEBU}}</td>
+								<td class="text-center" ng-class="black">₹ {{data.TANMOY}}</td>
+								<td class="text-center" ng-class="black">₹ {{data.SURAJIT}}</td>
+								<td class="orange">{{data.BILLDESC}}</td>
+								<td ng-class="black">
+									<button class="btn btn-success buttonStyle" type="button" ng-click="restore(data)" uib-tooltip="Restore"><span class="glyphicon glyphicon-refresh"></span></button>
+									<button class="btn btn-danger buttonStyle" type="button" ng-click="delPermanent(data)" uib-tooltip="Delete"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <dir-pagination-controls
+                        max-size="5"
+                        direction-links="true"
+                        boundary-links="true" >
+                    </dir-pagination-controls>
+				</div>
+			</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-warning warning buttonStyle" type="button" ng-click="close()">CANCEL</button>
+    </div>
+</div>

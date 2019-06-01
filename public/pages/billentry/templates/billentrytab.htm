@@ -1,0 +1,87 @@
+<div class="container">
+	<div class="card">
+		<div class="card-block" style="background-color: #20a8d8; border: 2px solid #000; border-radius: 5px;">
+		<ng-form name="addrecord" novalidate>
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<div class="form-group">
+						<label>Bill Payer:</label>
+						<select type="text" class="form-control" ng-options="bp.name for bp in billpayer | orderBy: 'name'" ng-model="bill_payer" style="color: #000;" ng-required="true">
+							<option value="">--Select Bill Payer--</option>
+						</select>
+					</div>
+					
+					<div class="form-group">
+						<label for="bill_date">Date of Payment:</label>
+						<!--<div class="input-group" moment-picker="bill_date" format="YYYY-MM-DD" start-view="day">
+							<span class="input-group-addon">
+						        <i class="glyphicon glyphicon-calendar"></i>
+						    </span>
+						    <input class="form-control" placeholder="Select a date" ng-model="bill_date" ng-model-options="{ updateOn: 'blur' }" style="color: #000;">
+						</div>-->
+						<p class="input-group-add-bill" id="bill_date">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+							<input type="text" class="form-control" uib-datepicker-popup="{{format}}" placeholder="Select bill date"
+								ng-model="bill_date" is-open="popup.opened" datepicker-options="dateOptions"ng-required="true"
+								close-text="Close" alt-input-formats="altInputFormats" show-button-bar="true"/>
+						</p>
+						<!-- <datepicker date-format="yyyy-MM-dd">
+							<input placeholder="Date Picker" type="text"/>
+						</datepicker> -->
+					</div>
+					
+					<div class="form-group">
+						<label>Paid Amount:</label>
+						<input type="number" class="form-control" placeholder="Enter paid amount" ng-model="bill_amount" style="color: #000;" ng-required="true">
+					</div>
+					
+					<div class="col-xs-1"></div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Arindam:</label>
+							<input type="number" class="form-control" ng-model="arindam1001" ng-init="arindam1001=0" style="color: #000;" ng-required="true">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Bipra:</label>
+							<input type="number" class="form-control" ng-model="anupam1005" ng-init="anupam1005=0" style="color: #000;" ng-required="true" disabled>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Saurav:</label>
+							<input type="number" class="form-control" ng-model="subhasis1002" ng-init="subhasis1002=0" style="color: #000;" ng-required="true" disabled>
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Sayan:</label>
+							<input type="number" class="form-control" ng-model="debu1004" ng-init="debu1004=0" style="color: #000;" ng-required="true">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div class="form-group">
+							<label>Tanmoy:</label>
+							<input type="number" class="form-control" ng-model="tanmoy1003" ng-init="tanmoy1003=0" style="color: #000;" ng-required="true">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label>Description:</label>
+						<textarea class="form-control" placeholder="Enter bill description" ng-model="bill_desc" rows="10" style="color: #000;" ng-required="true"></textarea>
+					</div>				
+				</div>
+				<div class="row">
+			    	<div class="col-xs-4 col-xs-offset-3">
+			        	<button type="submit" class="btn btn-success success buttonStyle" ng-disabled="addrecord.$invalid" ng-click="recordSubmit()">Submit</button>
+			        	<button type="button" class="btn btn-danger danger buttonStyle" ng-click="recordReset()">Reset</button>
+			        </div>
+			    </div>
+			</div>
+		</ng-form>
+		</div>
+	</div>
+</div>

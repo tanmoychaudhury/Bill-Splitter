@@ -1,0 +1,89 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 18px;">
+            <span class="regHeader">Accounts</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <uib-tabset justified="true" active="active" style="font-weight: bold;">
+            <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}">
+                <div class="card">
+                  <div class="card-block" ng-if="tab.length === 0">
+                    <div class="red" style="text-align: center;">{{tab.empty_msg}}</div>
+                  </div>
+                  <div class="card-block" ng-if="tab.length > 0">
+                  <div class="table-responsive">
+                      <table class="table table-hover table-outline m-b-0 hidden-sm-down">
+                        <thead class="thead-default">
+                          <tr>
+                              <th class="text-center">Name</th>
+                              <th class="text-center">User ID</th>
+                              <th class="text-center">Created Date</th>
+                              <th ng-if="tab.title === 'Requests'"></th>
+                              <th></th>
+                          </tr>
+                        </thead>
+                        <tbody  class="black">
+                            <tr dir-paginate="data in tab.content | itemsPerPage:5 track by $index">
+                                <td class="text-center">
+                                  <span class="orange" style="font-size: inherit;">{{data.First_Name}} {{data.Last_Name}}</span>
+                                </td>
+                                <td class="text-center" ng-class="black">
+                                    <span>{{data.User_Id}}</span>
+                                </td>
+                                <td class="text-center">
+                                  <span class="label label-primary primary" style="font-size: inherit;">
+                                    {{data.Created_date | date : "dd-MMM-yyyy, hh:mm a"}}
+                                  </span>
+                                </td>
+                                <td ng-if="data.Status === 'In Progress'">
+                                  <button class="btn btn-success buttonStyle" type="button" ng-click="accAccept(data)">accept</button>
+                                  <button class="btn btn-danger buttonStyle" type="button" ng-click="accReject(data)">reject</button>
+                                </td>
+                                <td>
+                                  <button class="btn btn-danger buttonStyle" type="button" ng-click="accReject(data)">delete</button>
+                                </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <dir-pagination-controls
+                          max-size="5"
+                          direction-links="true"
+                          boundary-links="true" >
+                        </dir-pagination-controls>
+                  </div></div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+        <!-- <ul class="nav nav-tabs nav-justified">
+          <li class="active"><a data-toggle="tab" href="#requests">Requests</a></li>
+          <li><a data-toggle="tab" href="#active">Active Accounts</a></li>
+          <li><a data-toggle="tab" href="#rejected">Rejected Accounts</a></li>
+          <li><a data-toggle="tab" href="#admin">Admin</a></li>
+        </ul>
+      
+        <div class="tab-content">
+          <div id="requests" class="tab-pane fade in active">
+            <h3></h3>
+            <p>Accounts creation requests</p>
+          </div>
+          <div id="active" class="tab-pane fade">
+            <h3></h3>
+            <p>Active accounts</p>
+          </div>
+          <div id="rejected" class="tab-pane fade">
+            <h3></h3>
+            <p>Rejected accounts</p>
+          </div>
+          <div id="admin" class="tab-pane fade">
+            <h3></h3>
+            <p>Admin account</p>
+          </div>
+        </div> -->
+    </div>
+
+    <div class="row" style="padding-top: 10px;">
+        <button class="btn btn-warning warning buttonStyle" type="button" ng-click="close()">CANCEL</button>
+    </div>
+</div>

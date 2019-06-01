@@ -1,0 +1,170 @@
+
+.bottompagebar{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background: white;
+}
+
+.page-container{
+	height: 65%;
+	position: absolute;
+	width: 100%;
+}
+
+.tab-page-content{
+	position: absolute;
+	height: 130%;
+	overflow-y: auto;
+	width: 100%;
+}
+canvas{
+	width: 100% !important;
+}
+canvas.absCanvas{
+	position: absolute;
+}
+.proximity{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid #00bdd3;
+	display: inline-block;
+}
+.proximity i{
+	font-size: 50px;
+	position: relative;
+	top: 28%;
+	color: #00bdd3;
+}
+.redclass,.weightfont{
+	color: red !important;
+}
+.weightfont{
+	font-size: 20px;
+}
+.nv-y {
+  display: none;
+}
+
+.tick line {
+  display: none;
+}
+
+.regHeader {
+	font-size: 22px;
+    color: rgb(68, 68, 68);
+    line-height: 1.2;
+    position: absolute;
+}
+.colMarginBotton {
+	margin-bottom: 15px;
+}
+
+.buttonStyle {
+    border: 1px solid #000;
+	/*letter-spacing: .4px;*/
+	border-radius: 4px;
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.usernameBtn {
+    background-color: #2d0de2;
+	font-weight: bold;
+	font-size: 14px;
+	color: white;
+	text-transform: uppercase;
+}
+
+/*.btn {
+    border-radius: 0;
+    font-size: 16px;
+    padding: 10px 30px;
+    font-weight: 700;
+    opacity: 0.9;
+    text-transform: uppercase;
+}*/
+
+.input-group-add-bill {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+/*.moment-picker {
+	z-index: 1060 !important;
+}*/
+.closeIcon{
+	max-width: 25px;
+	max-height: 25px;
+	margin-bottom: 14px;
+	margin-top: 0px;
+	margin-right: 10px;
+}
+.requiredField {
+    color: red;
+    font-weight: bold;
+}
+.smallModalWindow .modal-dialog{
+	margin-top: 159px;
+	width: 50px;
+	min-width: 379px;
+}
+.mediumModalWindow .modal-dialog{
+	margin-top: 159px;
+	max-width: 1000px;
+}
+.largeModalWindow .modal-dialog{
+	margin-top: 80px;
+	max-width: 1200px;
+}
+.registerModalWindow .modal-dialog {
+    margin-top: 125px;
+}
+.billDetailsModalWindow .modal-dialog {
+	margin-top: 50px;
+	max-width: 50%;
+}
+.search-icon {
+    position: absolute;
+    left: 25px;
+    top: 6px;
+    color: #bbb;
+    font-size: 14px;
+}
+.small-img {
+    max-width: 15px;
+    max-height: 15px;
+}
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	display: none;
+	z-index: auto !important;
+}
+.overlay {
+	background: #000;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0.5;
+	pointer-events: none;
+	overflow: hidden;
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

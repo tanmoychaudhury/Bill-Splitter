@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="billapp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Bill-Splitter</title>
+    <link rel="icon" type="image/png" href="images/bill_logo.png"> <!--title image-->
+	
+	<!-- Raleway google font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	
+	<!-- Angular Moment Picker -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment-with-locales.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment-picker/0.10.1/angular-moment-picker.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/angular-moment-picker/0.10.1/angular-moment-picker.min.css" rel="stylesheet">
+	
+	<!-- Angular clock -->
+	<script src="bower_components/angular-ui-clock/dist/angular-clock.js"></script>
+	<link rel="stylesheet" href="bower_components/angular-ui-clock/dist/angular-clock.css">
+	
+	<!-- angularjs-datepicker -->
+    <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+    <link href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" type="text/css" href="lib/SweetAlert/sweetalert.css">
+    <script src="lib/SweetAlert/sweetalert.min.js"></script>
+    
+    <script src="js/Chart.min.js"></script>
+    <script src="js/angular-chart.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    	
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/appCSS.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <link rel="stylesheet" href="css/clock.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script> -->
+    <script data-require="ui-bootstrap@*" data-semver="0.10.0" src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+      
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    
+    <script src="js/route.js"></script>
+    <script src="js/dirPagination.js"></script>
+    <script src="pages/login/controllers/loginPageCntrl.js"></script>
+    <script src="pages/login/controllers/registerPageCntrl.js"></script>
+    <script src="pages/login/services/loginService.js"></script>
+    <script src="pages/login/services/authService.js"></script>
+    <script src="pages/tabs/controllers/maintabCntrl.js"></script>
+    <script src="pages/dashboard/controllers/dashboardtabCntrl.js"></script>
+    <script src="pages/billentry/controllers/billentrytabCntrl.js"></script>
+    <script src="pages/billupdate/controllers/billupdatetabCntrl.js"></script>
+    <script src="pages/about/controllers/abouttabCntrl.js"></script>
+    <script src="pages/note/controllers/noteModalCntrl.js"></script>
+    <script src="pages/inbox/controllers/inboxtabCntrl.js"></script>
+    <script src="pages/inbox/controllers/addBillDetailsModalCntrl.js"></script>
+    <script src="pages/inbox/controllers/billDetailsModalCntrl.js"></script>
+    <script src="pages/inbox/controllers/accountsModalCntrl.js"></script>
+    <script src="pages/inbox/controllers/monthlyBillDetailsModalCntrl.js"></script>
+    <script src="pages/inbox/controllers/recycleBinModalCntrl.js"></script>
+    <script src="pages/inbox/service/inboxService.js"></script>
+    <script src="pages/dashboard/controllers/dashboardBillDetailsModalCntrl.js"></script>
+    <script src="pages/common/controllers/commonModalViewCntrl.js"></script>
+    <script src="pages/config/services/userDataConfigService.js"></script>
+        
+</head>
+<body style="font-family: 'Raleway',sans-serif;">
+    <!--<div class="loader"></div>-->
+    <ui-view></ui-view>
+</body>
+</html>

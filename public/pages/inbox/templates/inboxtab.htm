@@ -1,0 +1,84 @@
+<div class="row" style="margin-top: 10px;">
+	<div class="col-md-12">
+		<div class="card"> <!--<div class="card text-white bg-success">-->
+			<div class="card-block" style="font-size: large; font-weight: bold; color: #fff; background-image: linear-gradient(to right,#24b755,rgba(167, 230, 50, 0.877));">
+				<div class="col-md-1">Filter:</div>
+				<div class="col-md-2" style="cursor: pointer;">
+					<a ng-click="sort('week_no')">
+						<span class="fa fa-calendar" aria-hidden="true" ng-show="!reverseSort"></span>
+						<span class="fa fa-calendar" aria-hidden="true" ng-show="reverseSort"></span>&nbsp;
+						By Week #
+						<span class="fa fa-sort-desc" aria-hidden="true" ng-show="!reverseSort"></span>
+						<span class="fa fa-sort-asc" aria-hidden="true" ng-show="reverseSort"></span>
+					</a>
+				</div>				
+				<div class="col-md-2">
+					<select type="text" ng-change="yearwiseInboxData(bill_year)" class="form-control" ng-options="year for year in yearoptions" ng-init="bill_year = curYear" ng-model="bill_year" ng-required="true" style="height: 34px;">
+						<!--<option value=""></option>-->
+					</select>
+				</div>
+				<div class="col-md-2" style="color: black;">
+					<span class="search-icon"><img src="images/Search icon.png" class="small-img" ></span>
+            		<input type="text" ng-model="search" class="form-control" placeholder="Search..." style="color: black; padding-left: 32px;">
+				</div>
+				<div class="col-md-5">
+					<button class="btn btn-primary buttonStyle" type="button" ng-click="openAddBillModal()" uib-tooltip="Add Bill"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+					<button class="btn btn-primary buttonStyle" type="button" ng-disabled="responseType === 'string'" ng-click="openMonthlyBillModal(bill_year)" uib-tooltip="Monthly Bill"><i class="fa fa-line-chart fa-lg" aria-hidden="true"></i></button>
+					<button class="btn btn-primary buttonStyle" type="button" ng-click="openAccountsModal()" uib-tooltip="Accounts"><i class="fa fa-users fa-lg" aria-hidden="true"></i></button>
+					<button class="btn btn-primary buttonStyle" type="button" ng-click="openRecycleBinModal()" uib-tooltip="Recycle Bin"><i class="fa fa-recycle fa-lg" aria-hidden="true"></i></button>
+					<button class="btn btn-primary buttonStyle" type="button" ng-click="openNotelModal()" uib-tooltip="Bill Cycle"><i class="fa fa-calendar-check-o fa-lg" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-block" ng-if="responseType === 'string'">
+				<div class="red" style="text-align: center;">No bill added yet. Please add bills using ADD BILL button.</div>
+			</div>
+			<div class="card-block" ng-if="responseType !== 'string'">
+			<div class="table-responsive">
+				<table class="table table-hover table-outline m-b-0 hidden-sm-down">
+					<thead class="thead-default" style="font-size: large; font-weight: bold;">
+						<tr>
+							<th class="text-center">Week #</th>
+							<th class="text-center">Bill Period</th>
+							<th class="text-center">Amount</th>
+							<!--<th>Description</th>-->
+							<th></th>
+						</tr>
+					</thead>
+					<tbody  class="black">
+						<tr dir-paginate="data in inboxData.data | orderBy:sortKey:!reverseSort | filter:search | itemsPerPage:10">
+							<!-- show-->
+							<td ng-hide="edited === $index" class="text-center">
+								<span class="orange" style="font-size: inherit;">{{data.week_no}}</span>
+							</td>
+							<td ng-hide="edited === $index" class="text-center">
+								<span class="label label-primary primary" style="font-size: inherit;">
+									{{data.first_day | date : "dd MMM"}} - {{data.last_day | date : "dd MMM"}}
+								</span>
+							</td>
+							<td ng-hide="edited === $index" class="text-center" ng-class="black">
+								<span ng-class="{'red' : data.total_amount > 0,
+										'green' : data.total_amount < 0}">₹ {{data.total_amount}}</span>
+							</td>
+							<!--<td ng-hide="edited === $index" class="orange">{{data.BILLDESC}}</td>-->
+							<td ng-hide="edited === $index" ng-class="black">
+								<button class="btn btn-primary info buttonStyle" type="button" ng-click="openBillDetailsModal(data)">Details</button>
+								<!--<button class="btn btn-danger buttonStyle" type="button" ng-click="remove(data,$index)">Delete</button>-->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<dir-pagination-controls
+			       max-size="10"
+			       direction-links="true"
+			       boundary-links="true" >
+			    </dir-pagination-controls>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="overlay">
+	<div class="loader"></div>
+</div>

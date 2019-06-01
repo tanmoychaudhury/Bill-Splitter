@@ -1,0 +1,56 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 18px;">
+            <span class="regHeader">ADD BILL DETAILS</span>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label class="form-label" for="fromDate"><span class="requiredField">*</span>Bill Date:</label>
+        </div>
+        <div class="col-xs-7">
+            <!--<div class="input-group" moment-picker="fromDate" format="DD-MMM-YYYY" start-view="day">
+                <input class="form-control" placeholder="Select a date" ng-model="fromDate" ng-model-options="{ updateOn: 'blur' }" style="color: #000;">
+				<span class="input-group-addon">
+					<i class="glyphicon glyphicon-calendar"></i>
+				</span>
+			</div>-->
+            <p class="input-group-add-bill" id="fromDate">
+				 <input type="text" class="form-control" uib-datepicker-popup="{{format}}" placeholder="Select bill date"
+                	ng-model="fromDate" is-open="popup.opened" datepicker-options="dateOptions"ng-required="true"
+                    close-text="Close" alt-input-formats="altInputFormats" show-button-bar="true"/>
+				<span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Bill Amount:</label>
+        </div>
+        <div class="col-xs-7">
+            <input type="number" class="form-control" placeholder="Enter bill amount" ng-model="bill_amount" style="color: #000;" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Description:</label>
+        </div>
+        <div class="col-xs-7">
+            <textarea class="form-control" placeholder="Enter bill description" ng-model="bill_desc" rows="10" style="color: #000;" ng-required="true"></textarea>
+        </div>
+    </div>
+    <div class="row colMarginBotton" style="margin-top: 20px;">
+        <span>
+            <button class="btn btn-success btn-submit buttonStyle" type="submit" 
+            ng-disabled="!fromDate || !bill_amount || !bill_desc" ng-click="submitBillDetails()">Submit</button>
+        </span>
+        <span>
+            <button class="btn btn-warning btn-cancel buttonStyle" type="reset" ng-click="close()">Cancel</button>
+        </span>
+    </div>
+</div>
+<div class="overlay">
+	<div class="loader"></div>
+</div>

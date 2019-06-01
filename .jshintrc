@@ -1,0 +1,14 @@
+{
+    "undef": true,
+    "unused": true,
+    "asi": true,
+    "predef": [
+      "require","global","__dirname","exports","process","setTimeout","module","router","console","billapp",
+      "sessionStorage","moment","swal"
+    ],
+    "esversion": 6,
+    "globals": {
+      "MY_GLOBAL": true,
+      "$": true
+    }
+}

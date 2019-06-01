@@ -1,0 +1,19 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 18px;">
+            <span class="regHeader">MONTHLY EXPENSE (YEAR {{year}})</span>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <!--Ongoing Development-->
+        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+    </div>
+    <div class="row colMarginBotton" style="margin-top: 20px;">
+        <span>
+            <button class="btn btn-warning btn-cancel buttonStyle" type="reset" ng-click="close()">Cancel</button>
+        </span>
+    </div>
+</div>
+<div class="overlay">
+	<div class="loader"></div>
+</div>

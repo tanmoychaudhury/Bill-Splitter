@@ -1,0 +1,106 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 18px;">
+            <span class="regHeader">ADD BILL DETAILS</span>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Bill Payer:</label>
+        </div>
+        <div class="col-xs-8">
+            <select type="text" class="form-control" ng-options="bp.name for bp in billpayer | orderBy: 'name'" ng-model="bill_payer" style="color: #000;" ng-required="true">
+				<option value="">--Select Bill Payer--</option>
+			</select>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label class="form-label" for="fromDate"><span class="requiredField">*</span>Bill Date:</label>
+        </div>
+        <div class="col-xs-8">
+            <p class="input-group-add-bill" id="bill_date">
+				<input type="text" class="form-control" uib-datepicker-popup="{{format}}" placeholder="Select bill date"
+					ng-model="bill_date" is-open="popup.opened" datepicker-options="dateOptions"ng-required="true"
+					close-text="Close" alt-input-formats="altInputFormats" show-button-bar="true"/>
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+				</span>
+			</p>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Bill Amount:</label><!-- oninput="validity.valid||(value='');" -->
+        </div>
+        <div class="col-xs-8">
+            <input type="number" class="form-control" placeholder="Enter bill amount" ng-model="bill_amount" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Arindam:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" ng-model="arindam1001" ng-init="arindam1001=0" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+        <div class="col-xs-2">
+            <label><span class="requiredField">*</span>Anupam:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" ng-model="anupam1005" ng-init="anupam1005=0" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Debu:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" ng-model="debu1004" ng-init="debu1004=0" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+        <div class="col-xs-2">
+            <label><span class="requiredField">*</span>Subhasis:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" ng-model="subhasis1002" ng-init="subhasis1002=0" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Tanmoy:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" ng-model="tanmoy1003" ng-init="tanmoy1003=0" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+        <div class="col-xs-2">
+            <label><span class="requiredField">*</span>Surajit:</label>
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" ng-model="surajit1006" ng-init="surajit1006=0" style="color: #000;" min="0" oninput="this.value = Math.abs(this.value)" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Description:</label>
+        </div>
+        <div class="col-xs-8">
+            <textarea class="form-control" placeholder="Enter bill description" ng-model="bill_desc" rows="5" style="color: #000;" ng-required="true"></textarea>
+        </div>
+    </div>
+    <div class="row colMarginBotton" style="margin-top: 20px;">
+        <span>
+            <button class="btn btn-success btn-submit buttonStyle" type="submit" 
+            ng-disabled="!bill_payer || !bill_date || !bill_amount || !bill_desc"
+            ng-click="recordSubmit()">Submit</button>
+        </span>
+        <span>
+            <button class="btn btn-warning warning buttonStyle" type="reset" ng-click="recordReset()">reset</button>
+        </span>
+        <span>
+            <button class="btn btn-danger danger buttonStyle" type="reset" ng-click="close()">Cancel</button>
+        </span>
+    </div>
+</div>
+<div class="overlay">
+	<div class="loader"></div>
+</div>

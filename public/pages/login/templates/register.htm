@@ -1,0 +1,40 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 18px;">
+            <span class="regHeader">Create Account</span>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>First Name</label>
+        </div>
+        <div class="col-xs-7">
+            <input type="text" class="form-control" ng-model="firstname" placeholder="Tanmoy" style="color: #000;" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Last Name</label>
+        </div>
+        <div class="col-xs-7">
+            <input type="text" class="form-control" ng-model="lastname" placeholder="Chaudhury" style="color: #000;" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3">
+            <label><span class="requiredField">*</span>Password</label>
+        </div>
+        <div class="col-xs-7">
+            <input type="password" class="form-control" ng-model="pw" placeholder="*******" style="color: #000;" ng-required="true">
+        </div>
+    </div>
+    <div class="row colMarginBotton" style="margin-top: 20px;">
+        <span>
+            <button class="btn btn-success btn-submit buttonStyle" type="submit" 
+            ng-disabled="!firstname || !lastname || !pw" ng-click="regBtnClicked()">Sign up</button>
+        </span>
+        <span>
+            <button class="btn btn-warning btn-cancel buttonStyle" type="reset" ng-click="close()">Cancel</button>
+        </span>
+    </div>
+</div>

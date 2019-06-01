@@ -1,0 +1,69 @@
+<div class="modal-body" style="margin-left: 27px;">
+    <div class="row" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 18px;">
+            <span class="regHeader">BILL DETAILS</span>
+        </div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Bill Paid by:</label></div>
+        <div class="col-xs-3 orange">{{PAYER}}</div>
+        <div class="col-xs-3"><label>Bill Date:</label></div>
+        <div class="col-xs-3 orange">{{BILLDATE | date : "dd-MMM-yyyy"}}</div>
+    </div>
+    <!-- <div class="row colMarginBotton">
+        
+    </div> -->
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Bill Amount:</label></div>
+        <div class="col-xs-3 orange">₹ {{AMOUNT}}</div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Arindam:</label></div>
+        <div class="col-xs-3 orange">₹ {{ARINDAM}}</div>
+        <div class="col-xs-3"><label>Anupam:</label></div>
+        <div class="col-xs-3 orange">₹ {{ANUPAM}}</div>
+    </div>
+    <!-- <div class="row colMarginBotton">
+        
+    </div> -->
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Subhasis:</label></div>
+        <div class="col-xs-3 orange">₹ {{SUBHASIS}}</div>
+        <div class="col-xs-3"><label>Debu:</label></div>
+        <div class="col-xs-3 orange">₹ {{DEBU}}</div>
+    </div>
+    <!-- <div class="row colMarginBotton">
+        
+    </div> -->
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Tanmoy:</label></div>
+        <div class="col-xs-3 orange">₹ {{TANMOY}}</div>
+        <div class="col-xs-3"><label>Surajit:</label></div>
+        <div class="col-xs-3 orange">₹ {{SURAJIT}}</div>
+    </div>
+    <!-- <div class="row colMarginBotton">
+    </div> -->
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Bill Description:</label></div>
+        <div class="col-xs-9 orange">{{BILLDESC}}</div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Created By:</label></div>
+        <div class="col-xs-3 orange">{{CREATED_BY}}</div>
+        <div class="col-xs-3"><label>Created Date:</label></div>
+        <div class="col-xs-3 orange">{{CREATED_DATE | date : "dd-MMM-yyyy, hh:mm a"}}</div>
+    </div>
+    <div class="row colMarginBotton">
+        <div class="col-xs-3"><label>Modified By:</label></div>
+        <div class="col-xs-3 orange" ng-show="MODIFIED_BY === null">Not Modified</div>
+        <div class="col-xs-3 orange" ng-show="MODIFIED_BY !== null">{{MODIFIED_BY}}</div>
+        <div class="col-xs-3"><label>Modified Date:</label></div>
+        <div class="col-xs-3 orange" ng-show="MODIFIED_DATE === null">Not Modified</div>
+        <div class="col-xs-3 orange" ng-show="MODIFIED_DATE !== null">{{MODIFIED_DATE | date : "dd-MMM-yyyy, hh:mm a"}}</div>
+    </div>
+    <div class="row colMarginBotton" style="margin-top: 20px;">
+        <span>
+            <button class="btn btn-warning btn-cancel buttonStyle" type="reset" ng-click="close()">Cancel</button>
+        </span>
+    </div>
+</div>

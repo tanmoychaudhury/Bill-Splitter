@@ -1,0 +1,51 @@
+    <div class="maintabcontent">
+        <nav class="navbar navbar-default navbar-fixed-top customappbar">
+            <ul class="nav navbar-nav navbar-left" style="position: relative; left: 34px; top: 0px; font-size: large;">        
+                <li id = "menu_dashboard"><a  ui-sref="maintab.dashboard" class="fa fa-home" aria-hidden="true" style="color: white"><span style="font-family: 'Raleway',sans-serif;">&nbsp;&nbsp;DASHBOARD</span></a></li>
+                <!--<li id = "menu_billentry"><a ui-sref="maintab.billentry" class="fa fa-list-alt" aria-hidden="true" style="color: white"><span style="font-family: 'Raleway',sans-serif;">&nbsp;&nbsp;BILL ENTRY</span></a></li>-->
+                <!-- <li id = "menu_billupdate"><a ui-sref="maintab.billupdate" class="fa fa-plus-circle" aria-hidden="true" style="color: white">&nbsp;&nbsp;BILL UPDATE</a></li> -->
+            </ul>
+            <ul class="btn-group pull-right" style="position: relative; right: 50px; font-size: x-large;">
+            	<div class="dropdown">
+                    <button class="btn dropdown-toggle usernameBtn customappbar1" ng-click="click($event)" type="button" data-toggle="dropdown">
+                        {{username}}<!-- <span class="caret"></span> -->
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <!-- <li><a ng-click="" style="cursor: pointer;font-weight: 600;"><i class="fa fa-user" style="margin-right: 10px;"></i> Profile</a></li> -->
+                        <li><a ng-click="logoutBtnClick()" style="cursor: pointer;font-weight: 600;"><i class="fa fa-power-off" style="margin-right: 10px;"></i>Sign Out</a></li>
+                    </ul>
+                </div>
+          </ul>
+        </nav>
+    </div> 
+
+    <div class="page-container">
+		<div class="tab-page-content" ui-view>
+		</div>
+	</div>
+
+<div class="bottompagebar">
+    <nav class="navbar navbar-default navbar-fixed-bottom customappbar">
+        <ul class="nav navbar-nav navbar-left" style="font-size: x-large; font-weight: bold;">
+            <li class="page-scroll">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+            <li class="tabHeaderTxt">Bill-Splitter</li>
+        </ul>        
+        <ul class="nav navbar-nav navbar-right" style="font-size: large; font-weight: bold;">
+            <li class="page-scroll">
+                <a ng-click="about()" style="color: white; cursor: pointer;">About</a>
+            </li>
+            <li class="page-scroll">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+            <li class="page-scroll">
+            	<ds-widget-clock show-digital theme="blue-light" digital-format="'EEE MMM d,yyyy'"></ds-widget-clock>
+            	<ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm a'"></ds-widget-clock>
+            </li>
+            <li class="page-scroll">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+        </ul>
+    </nav>
+</div>

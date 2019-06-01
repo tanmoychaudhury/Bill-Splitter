@@ -1,0 +1,16 @@
+{
+	"localCouchDB": {
+        "username": "admin",
+        "password": "admin",
+        "host": "127.0.0.1:5984",
+        "port": 443,
+        "url": "http://admin:admin@127.0.0.1:5984"
+    },
+    "cloudantNoSQLDB": {
+        "username": "fc564f71-b15c-4f53-9749-bbc4da9340b1-bluemix",
+        "password": "de8b215714586d9824c4a27d08c53f3a58135204e8391571f3a3f183f4c70cc9",
+        "host": "fc564f71-b15c-4f53-9749-bbc4da9340b1-bluemix.cloudant.com",
+        "port": 443,
+        "url": "https://fc564f71-b15c-4f53-9749-bbc4da9340b1-bluemix:de8b215714586d9824c4a27d08c53f3a58135204e8391571f3a3f183f4c70cc9@fc564f71-b15c-4f53-9749-bbc4da9340b1-bluemix.cloudant.com"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "about": {
+	  "build":"Build in Bangalore",
+	  "make":"make by Tanmoy Chaudhury",
+	  "year":"2017",
+	  "version":"1.0"
+  },
+  "credits": 
+	  [
+	   {"name":"Tanmoy Chaudhury, IBM"}
+	  ]
+ }

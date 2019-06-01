@@ -1,0 +1,158 @@
+.customappbar{
+	/*background-color: #ed1f24;*/
+    background-image: linear-gradient(to right,blue,orange);
+}
+.customappbar1{
+	/*background-color: #ed1f24;*/
+    background-image: linear-gradient(to right,rgb(209, 120, 19),rgb(255, 136, 0));
+}
+
+.tabHeaderTxt{
+	color: white;
+	padding-top: 12px;
+	padding-right: 4px;
+}
+
+.profile-img{
+	width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.profile-img-deviceDetails{
+	max-width: 100%;
+    border-radius: 50%;
+}
+.rgraph_domtext_wrapper{
+    width: 100%!important;
+}
+
+.tabs{
+	bottom: auto !important;
+	background: #3F51B5;
+	color: white;
+	
+	padding-top: 2px;
+    border-top: none !important;
+    border-bottom: none;
+    
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    justify-content: center;
+    transform: translate3d(0, 0, 0);
+    border-color: #b2b2b2;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 49px;
+    border-style: solid;
+    line-height: 49px;
+    
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
+}
+
+.tab-item{
+	-webkit-box-flex: 1;
+    flex: 1;
+    display: block;
+    overflow: hidden;
+    max-width: 150px;
+    height: 100%;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    opacity: 0.7;
+    
+    -webkit-user-drag: none;
+    
+    outline: 0;
+    
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*vertical-align: baseline;*/
+    font: inherit;
+}
+.navbar-default .navbar-nav{
+    margin-bottom: 0px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color: transparent;
+    border-bottom: 5px solid #C70039;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.green {
+  color: #10D809;
+  font-weight: 700;
+}
+
+.red {
+  color: orangered;
+  font-weight: 700;
+}
+
+.black {
+  color: rgb(68, 68, 68);
+  font-weight: 700;
+}
+
+.grey {
+    background-color: #f1f1f1;
+}
+
+.arindam {
+  color: #FFC300;
+}
+
+.anupam {
+  color: #BA1FB8;
+}
+
+.subhasis {
+  color: #0948D8;
+}
+
+.orange {
+  color: #FF5733;
+  font-weight: bold;
+}
+
+.logoutButtonStyle {
+  color: white;
+  font-size: 20px;
+  border-radius: 0;
+  background-color: #2d0de2;
+  border-color: #2d0de2;
+}
+
+.modified {
+    border-left: 5px solid #ee5e1b;
+}
+
+.primary {
+  background-color: #7659ff;
+}
+.warning {
+  background-color: #ffa100;
+}
+.success {
+  background-color: #00d977;
+}
+.info {
+  background-color: #0088ff;
+}
+.danger {
+  background-color: orangered;
+}

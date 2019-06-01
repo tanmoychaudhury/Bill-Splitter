@@ -1,0 +1,71 @@
+<div class="card" style="border-bottom-width: 0px;" ng-cloak>
+	<div class="modal-header" style="background-color: black; font-weight:bold; color: whitesmoke;">
+    	<h4 class="modal-title" style="text-align: center;">Bill Cycle Info</h4>
+    </div>
+	<div class="card-block">
+		<div class="modal-body">
+			<!-- <div class="row">
+				<div class="col-md-12">
+					<p style="font-weight: bold;">Bipra's Due note</p>
+					<p>Arnab = 148, Sayan = 102, Tanmoy = 89</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p style="font-weight: bold;">Field Name Change note (format: old = new)</p>
+					<p>Saurav = Subhasis, Bipra = Anupam, Sayan = Debu, Arnab = Arindam</p>
+				</div>
+			</div> -->
+			<div class="row">
+				<div class="col-md-5">
+					<p style="font-weight: bold;">Last Clearance Date</p>
+				</div>
+				<div class="col-md-5">
+					<p>{{lastBillDate | date : "dd-MMM-yyyy"}}</p>
+				</div>
+				<div class="col-md-2">
+					<input class="form-control" type="number" ng-model="diff1">
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-5">
+					<p style="font-weight: bold;">Current Bill Cycle</p>
+				</div>
+				<div class="col-md-5">
+					<p>{{currentBillCycle | date : "dd-MMM-yyyy"}} - Present</p>
+				</div>
+				<div class="col-md-2">
+					<input class="form-control" type="number" ng-model="diff2">
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-5">
+					<p style="font-weight: bold;">Last Modified By</p>
+				</div>
+				<div class="col-md-7">
+					<p>{{modBy}}</p>
+				</div>
+			</div><br>
+			<div class="row">
+				<div class="col-md-5">
+					<p style="font-weight: bold;">Modified Date</p>
+				</div>
+				<div class="col-md-7">
+					<p>{{modDate | date : "dd-MMM-yyyy, hh:mm a"}}</p>
+				</div>
+			</div>		
+		</div>
+	</div>
+	<div class="row colMarginBotton" style="margin-top: 20px;">
+		<!-- <span ng-show="userType==='Admin'"> -->
+		<span>
+			<button class="btn btn-success buttonStyle" type="submit" ng-click="updateBillCycle(diff1,diff2)">update</button>
+		</span>
+		<span>
+            <button class="btn btn-info buttonStyle" type="button" ng-click="resetBillCycle()">reset</button>
+        </span>
+        <span>
+            <button class="btn btn-warning buttonStyle" type="reset" ng-click="close()">close</button>
+		</span>
+    </div>
+</div>

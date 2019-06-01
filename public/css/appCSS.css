@@ -1,0 +1,293 @@
+@media (min-width: 765px) {
+
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); 
+      margin-left: 40px;
+      float: right;
+      top: 50px;
+    }
+}
+
+  @media (min-width: 1330px) {
+
+    .main{
+      width: calc(100% - 200px);
+      
+      float: right;
+      margin-left: 200px;
+      top: 50px;
+    }
+}
+
+
+  @media (max-width: 480px) {
+
+    .main{
+      margin-top: 40px;
+    }
+}
+
+  .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+     
+     padding: 10px 10px 0 10px;
+    
+  }
+ 
+/* Turn off number input spinner for Google Chrome and Internet Explorer*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button 
+{
+  -webkit-appearance: none; 
+  margin: 0;
+}
+/* Turn off number input spinner for Mozilla Firefox*/
+input[type=number] {-moz-appearance: textfield;}
+
+  .help-block {
+    font-size: 12px;
+}
+
+.rowAnimatedFadeIN
+  {
+  	padding: 10px 0;
+    margin: 10px 0;
+    background-color: #fff;
+    overflow: hidden;
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    box-sizing: border-box;
+  }
+
+  .appAlert
+  {
+  	width: 40%;
+    position: relative;
+    left: 30%;
+  }
+  
+  .appNameHeader{
+	height: 29px;
+    position: absolute;
+    left: 43%;
+    font-size: 22px;
+  }
+  
+  .tabheadercommon
+  {
+	position: relative;
+	left: 16px;
+	
+	padding-bottom: 25px;
+    margin: 40px 0 50px;
+    border-bottom: 1px solid #eee;
+ }
+ 
+ .deviceRegHeader
+ {
+ 	position: relative;
+	left: 8%;
+	top: 3px;
+ }
+ 
+ .deviceListHeader
+ {
+ 	position: relative;
+	left: 2%;
+	top: 3px;
+ }
+
+.assetListHeader
+ {
+ 	position: relative;
+	left: 2%;
+	top: 3px;
+ }
+ 
+ .userListHeader
+ {
+ 	position: relative;
+	left: 1%;
+	top: 3px;
+ }
+ 
+ .statusMsg
+ {
+ 	position: relative;
+    left: 40%;
+    top: 380px;
+    font-size: larger;
+    font-weight: bolder;
+ }
+ 
+.payStatusMsg
+ {
+ 	position: relative;
+    left: 40%;
+    top: 340px;
+    font-size: larger;
+    font-weight: bolder;
+ } 
+ 
+ .boxPosition
+{
+ 	position: relative;
+    left: 25%;
+    top: 100px;
+    /* color: white; */
+    width: 350px;
+    height: 200px;
+    /* background-color: blue; */
+ }
+ .submitbtn
+ {
+ 	position: absolute;
+    left: 48%;
+    bottom: -160%;
+    color: white;
+    background-color: blue;
+ }
+ .paySubmitbtn
+ {
+ 	position: absolute;
+    left: 48%;
+    bottom: -80%;
+    color: white;
+    background-color: blue;
+ }
+ .regdevicebtn
+ {
+ 	position: absolute;
+    left: 77%;
+    bottom: 25%;
+    color: blue;
+ }
+ .regMultipledevicebtn
+ {
+ 	position: absolute;
+    left: 87%;
+    bottom: 25%;
+    color: green;
+ }
+ .assetRegHeader
+ {
+ 	position: relative;
+	left: 8%;
+	top: 3px;
+ }
+ 
+ .fleetManagerRegHeader
+ {
+ 	position: relative;
+	left: 8%;
+	top: 3px;
+ }
+ 
+ .paymentUpdateHeader
+ {
+ 	position: relative;
+	left: 8%;
+	top: 3px;
+ }
+ 
+ .consumeronBoardHeader
+ {
+ 
+ 	position: relative;
+	left: 8%;
+	top: 10px;
+ }
+ 
+ .assassetbtn
+ {
+ 	position: absolute;
+    left: 85%;
+    bottom: 25%;
+    color: blue;
+ }
+ .regassetbtn
+ {
+ 	position: absolute;
+    left: 72%;
+    bottom: 25%;
+    color: blue;
+ }
+   .regfleetmngrbtn
+ {
+ 	position: absolute;
+    left: 30%;
+    bottom: 25%;
+    color: blue;
+ }
+  .asstomanagerbtn
+ {
+ 	position: absolute;
+    left: 45%;
+    bottom: 25%;
+    color: blue;
+ }
+ .regdriverbtn
+ {
+ 	position: absolute;
+    left: 70%;
+    bottom: 25%;
+    color: blue;
+ }
+ .assdriverdevicebtn
+ {
+ 	position: absolute;
+    left: 80%;
+    bottom: 25%;
+    color: blue;
+ }
+ .getDevicestbtn
+ {
+ 	position: absolute;
+    left: 28%;
+    color: white;
+    background-color: blue;
+    top: 23px;
+ }
+ 
+  .getassetbtn
+ {
+ 	position: absolute;
+    left: 28%;
+    color: white;
+    background-color: blue;
+    top: 23px;
+ }
+ .backbtn
+ {
+ 	position: absolute;
+    color: white;
+    background-color: gainsboro;
+    top: -5px;
+ }
+ 
+ .formButtonfront {
+  border:1px solid gray;
+  border-radius:20%;
+  font-size:0.875;
+  word-wrap: break-word;
+  
+  max-width: 100%;
+ }
+ 
+.flat-table {
+ table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+}

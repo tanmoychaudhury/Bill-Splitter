@@ -1,0 +1,242 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-block" style="font-size: large; font-weight: bold; color: #fff; background-image: linear-gradient(to right,#24b755,rgba(167, 230, 50, 0.877));">
+				<div class="col-md-1">Sort By:</div>
+				<div class="col-md-2" style="cursor: pointer;">
+					<a ng-click="sort('PAYER')">
+						<span class="fa fa-sort-alpha-asc" aria-hidden="true" ng-show="!reverseSort"></span>
+						<span class="fa fa-sort-alpha-desc" aria-hidden="true" ng-show="reverseSort"></span>&nbsp;
+						Payer
+						<span class="fa fa-sort-desc" aria-hidden="true" ng-show="!reverseSort"></span>
+						<span class="fa fa-sort-asc" aria-hidden="true" ng-show="reverseSort"></span>
+					</a>
+				</div>
+				<div class="col-md-2" style="cursor: pointer;">
+					<a ng-click="sort('BILLDATE')">
+						<span class="fa fa-calendar" aria-hidden="true" ng-show="!reverseSort"></span>
+						<span class="fa fa-calendar" aria-hidden="true" ng-show="reverseSort"></span>&nbsp;
+						Date
+						<span class="fa fa-sort-desc" aria-hidden="true" ng-show="!reverseSort"></span>
+						<span class="fa fa-sort-asc" aria-hidden="true" ng-show="reverseSort"></span>
+					</a>
+				</div>
+				<div class="col-md-3" style="color: black;">
+					<span class="search-icon"><img src="images/Search icon.png" class="small-img" ></span>
+            		<input type="text" ng-model="search" class="form-control" placeholder="Search..." style="color: black; padding-left: 32px;">
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-3">
+					<button class="btn btn-primary buttonStyle" type="button" ng-click="openAddBillModal()">Add Bill</button>
+					<button class="btn btn-primary buttonStyle" type="button" ng-click="openNotelModal()">Bill Cycle</button>
+				</div>
+			</div>
+		</div>
+		<div class="card" style="max-height: 350px; overflow: auto;">
+			<div class="card-block" ng-if="responseDataLength === 0">
+				<div class="red" style="text-align: center;">No bill added yet</div>
+			</div>
+			<div class="card-block" ng-if="responseDataLength>0">
+				<div class="table-responsive">
+					<table class="table table-hover table-outline m-b-0 hidden-sm-down">
+						<thead class="thead-default" style="font-size: large; font-weight: bold;">
+							<tr>
+								<th class="text-center">Bill Payer</th>
+								<th class="text-center">Date</th>
+								<th class="text-center">Paid</th>
+								<th class="text-center">Arindam</th>
+								<th class="text-center">Anupam</th>
+								<th class="text-center">Subhasis</th>
+								<th class="text-center">Debu</th>
+								<th class="text-center">Tanmoy</th>
+								<th class="text-center">Surajit</th>
+								<th>Description</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody  class="black">
+							<tr ng-repeat="data in bills.data | orderBy:sortKey:reverseSort | filter:search" ng-class="{'modified':data.MODIFIED_DATE !== null}">
+								<!-- show-->
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">{{data.PAYER}}</td>
+								<td ng-hide="edited === $index" class="text-center">
+									<span class="label label-primary primary" style="font-size: inherit;">{{data.BILLDATE | date : "dd-MMM-yy"}}</span>
+								</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.AMOUNT}}</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.ARINDAM}}</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.ANUPAM}}</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.SUBHASIS}}</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.DEBU}}</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.TANMOY}}</td>
+								<td ng-hide="edited === $index" class="text-center" ng-class="black">₹ {{data.SURAJIT}}</td>
+								<td ng-hide="edited === $index" class="orange">{{data.BILLDESC}}</td>
+								<td ng-hide="edited === $index" ng-class="black">
+									<button class="btn btn-primary info buttonStyle" type="button" ng-click="edit($index)" uib-tooltip="Edit"><span class="glyphicon glyphicon-pencil"></span></button>
+									<button class="btn btn-info buttonStyle" type="button" ng-click="openBillDetailsModal(data)" uib-tooltip="Details"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i></button>
+									<button class="btn btn-danger danger buttonStyle" type="button" ng-click="remove(data,$index)" uib-tooltip="Delete"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
+								</td>
+								<!-- edit-->
+								<td ng-show="edited === $index" class="text-center">{{data.PAYER}}</td>
+								<td ng-show="edited === $index" class="text-center">
+									<span class="label label-primary primary" style="font-size: inherit;">{{data.BILLDATE | date : "dd-MMM-yy"}}</span>
+								</td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.amount" value="{{data.AMOUNT}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.arindam" value="{{data.ARINDAM}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.anupam" value="{{data.ANUPAM}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.subhasis" value="{{data.SUBHASIS}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.debu" value="{{data.DEBU}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.tanmoy" value="{{data.TANMOY}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index" class="text-center"><input type="number" class="form-control" ng-model="billupdate.surajit" value="{{data.SURAJIT}}" min="0" oninput="this.value = Math.abs(this.value)" style="color: #000;"></td>
+								<td ng-show="edited === $index"><textarea class="form-control" id="desc" ng-model="billupdate.billdesc" rows="3" ng-init="billupdate.billdesc=data.BILLDESC" style="color: #000;"></textarea></td>
+								<td ng-show="edited === $index">
+									<button class="btn btn-success success buttonStyle" type="button" ng-click="updateEdit(data,billupdate)" uib-tooltip="Save"><i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i></button>
+									<button class="btn btn-warning warning buttonStyle" type="button" ng-click="close()" uib-tooltip="Cancel"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- <dir-pagination-controls
+					max-size="10"
+					direction-links="true"
+					boundary-links="true" >
+					</dir-pagination-controls> -->
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" style="font-weight: bold; background-image: linear-gradient(to right,rgba(167, 230, 50, 0.877),#24b755); text-align: center; color: #fff;">
+				<span  style="font-size: x-large;">Individual Bill</span>
+			</div>
+			<div class="card-block">
+				<div class="col-md-4">
+					<table class="table table-hover table-bordered table-outline m-b-0 hidden-sm-down">
+						<thead class="thead-default" style="font-size: large; font-weight: bold;">
+							<tr>
+								<th class="text-center">Roommate</th>
+								<th class="text-center">Receive</th>
+								<th class="text-center">Pay</th>
+							</tr>
+						</thead>
+						<tbody class="black">
+							<tr>
+								<td class="text-center">Arindam</td>
+								<td class="text-center" style="color: rgb(71, 233, 75);">₹ {{arindamRECEIVE}}</td>
+								<td class="text-center" style="color: red">₹ {{arindamPAY}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Anupam</td>
+								<td class="text-center" style="color: rgb(71, 233, 75);">₹ {{anupamRECEIVE}}</td>
+								<td class="text-center" style="color: red">₹ {{anupamPAY}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Subhasis</td>
+								<td class="text-center" style="color: rgb(71, 233, 75);">₹ {{subhasisRECEIVE}}</td>
+								<td class="text-center" style="color: red">₹ {{subhasisPAY}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Debu</td>
+								<td class="text-center" style="color: rgb(71, 233, 75);">₹ {{debuRECEIVE}}</td>
+								<td class="text-center" style="color: red">₹ {{debuPAY}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Tanmoy</td>
+								<td class="text-center" style="color: rgb(71, 233, 75);">₹ {{tanmoyRECEIVE}}</td>
+								<td class="text-center" style="color: red">₹ {{tanmoyPAY}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Surajit</td>
+								<td class="text-center" style="color: rgb(71, 233, 75);">₹ {{surajitRECEIVE}}</td>
+								<td class="text-center" style="color: red">₹ {{surajitPAY}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-8">
+					<table class="table table-hover table-bordered table-outline m-b-0 hidden-sm-down">
+						<thead class="thead-default" style="font-size: large; font-weight: bold;">
+							<tr>
+								<th class="text-center">Payee</th>
+								<th class="text-center">Arindam</th>
+								<th class="text-center">Anupam</th>
+								<th class="text-center">Subhasis</th>
+								<th class="text-center">Debu</th>
+								<th class="text-center">Tanmoy</th>
+								<th class="text-center">Surajit</th>
+							</tr>
+						</thead>
+						<tbody class="black">
+							<tr>
+								<td class="text-center">Arindam</td>
+								<td class="text-center">₹ {{arindamDUE1}}</td>
+								<td class="text-center" ng-class="{'red': anupamDUE1>0}">₹ {{anupamDUE1}}</td>
+								<td class="text-center" ng-class="{'red': subhasisDUE1>0}">₹ {{subhasisDUE1}}</td>
+								<td class="text-center" ng-class="{'red': debuDUE1>0}">₹ {{debuDUE1}}</td>
+								<td class="text-center" ng-class="{'red': tanmoyDUE1>0}">₹ {{tanmoyDUE1}}</td>
+								<td class="text-center" ng-class="{'red': surajitDUE1>0}">₹ {{surajitDUE1}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Anupam</td>
+								<td class="text-center" ng-class="{'red': arindamDUE2>0}">₹ {{arindamDUE2}}</td>
+								<td class="text-center">₹ {{anupamDUE2}}</td>
+								<td class="text-center" ng-class="{'red': subhasisDUE2>0}">₹ {{subhasisDUE2}}</td>
+								<td class="text-center" ng-class="{'red': debuDUE2>0}">₹ {{debuDUE2}}</td>
+								<td class="text-center" ng-class="{'red': tanmoyDUE2>0}">₹ {{tanmoyDUE2}}</td>
+								<td class="text-center" ng-class="{'red': surajitDUE2>0}">₹ {{surajitDUE2}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Subhasis</td>
+								<td class="text-center" ng-class="{'red': arindamDUE3>0}">₹ {{arindamDUE3}}</td>
+								<td class="text-center" ng-class="{'red': anupamDUE3>0}">₹ {{anupamDUE3}}</td>
+								<td class="text-center">₹ {{subhasisDUE3}}</td>
+								<td class="text-center" ng-class="{'red': debuDUE3>0}">₹ {{debuDUE3}}</td>
+								<td class="text-center" ng-class="{'red': tanmoyDUE3>0}">₹ {{tanmoyDUE3}}</td>
+								<td class="text-center" ng-class="{'red': surajitDUE3>0}">₹ {{surajitDUE3}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Debu</td>
+								<td class="text-center" ng-class="{'red': arindamDUE4>0}">₹ {{arindamDUE4}}</td>
+								<td class="text-center" ng-class="{'red': anupamDUE4>0}">₹ {{anupamDUE4}}</td>
+								<td class="text-center" ng-class="{'red': subhasisDUE4>0}">₹ {{subhasisDUE4}}</td>
+								<td class="text-center">₹ {{debuDUE4}}</td>
+								<td class="text-center" ng-class="{'red': tanmoyDUE4>0}">₹ {{tanmoyDUE4}}</td>
+								<td class="text-center" ng-class="{'red': surajitDUE4>0}">₹ {{surajitDUE4}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Tanmoy</td>
+								<td class="text-center" ng-class="{'red': arindamDUE5>0}">₹ {{arindamDUE5}}</td>
+								<td class="text-center" ng-class="{'red': anupamDUE5>0}">₹ {{anupamDUE5}}</td>
+								<td class="text-center" ng-class="{'red': subhasisDUE5>0}">₹ {{subhasisDUE5}}</td>
+								<td class="text-center" ng-class="{'red': debuDUE5>0}">₹ {{debuDUE5}}</td>
+								<td class="text-center">₹ {{tanmoyDUE5}}</td>
+								<td class="text-center" ng-class="{'red': surajitDUE5>0}">₹ {{surajitDUE5}}</td>
+							</tr>
+							<tr>
+								<td class="text-center">Surajit</td>
+								<td class="text-center" ng-class="{'red': arindamDUE6>0}">₹ {{arindamDUE6}}</td>
+								<td class="text-center" ng-class="{'red': anupamDUE6>0}">₹ {{anupamDUE6}}</td>
+								<td class="text-center" ng-class="{'red': anupamDUE6>0}">₹ {{subhasisDUE6}}</td>
+								<td class="text-center" ng-class="{'red': subhasisDUE6>0}">₹ {{debuDUE6}}</td>
+								<td class="text-center" ng-class="{'red': tanmoyDUE6>0}">₹ {{tanmoyDUE6}}</td>
+								<td class="text-center">₹ {{surajitDUE6}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="col-md-4" >
+		<div class="card">
+			<div class="card-header" style="background-color: #ed1f24; text-align: center; color: whitesmoke;">
+				<span  style="font-size: x-large;">Widget</span>
+			</div>
+			<div class="card-block" style="background-color: antiquewhite;">
+				<ds-widget-clock theme="theme" digital-format="format"></ds-widget-clock>
+				<ds-widget-clock show-digital theme="blue-light" digital-format="'hh:mm:ss a'"></ds-widget-clock>
+				<ds-widget-clock show-analog theme="blue-light"></ds-widget-clock>
+			</div>
+		</div>
+	</div> -->
+</div>
+<div class="overlay">
+	<div class="loader"></div>
+</div>
