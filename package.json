@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "async": "*",
-    "body-parser": "1.15.2",
+    "body-parser": "1.20.3",
     "angular-chart.js": "^1.1.1",
     "bower-json": "^0.8.1",
     "cfenv": "1.0.x",
